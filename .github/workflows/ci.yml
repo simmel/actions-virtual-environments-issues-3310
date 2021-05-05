@@ -15,7 +15,7 @@ jobs:
         ruby-version: 2.7
 
     - name: install
-      run: "sudo apt-get update >/dev/null && sudo apt-get install -y puppet >/dev/null && dpkg -l '*ruby*' '*puppet*' && which ruby puppet && head -n1 `which puppet` && ruby --version && /usr/bin/ruby --version && ruby -ruri -e 'puts URI.escape(\"/a p a\")' && ls -al /usr/bin/ruby && file /usr/bin/ruby2.7 ruby2.7 && /usr/bin/ruby -ruri -e 'puts URI.escape(\"/a p a\")'"
+      run: "sudo apt-get update >/dev/null && sudo apt-get install -y puppet >/dev/null && /usr/bin/gem list uri && /usr/bin/ruby -ruri -e 'puts URI.escape(\"/a p a\")'"
 
     - name: puppet version
       run: "puppet --version"
